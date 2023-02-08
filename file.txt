@@ -1,2 +1,283 @@
 file is now overwritten
 
+// kattas 2 //
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git init
+Initialized empty Git repository in C:/Users/Manan Bhateja/Desktop/kattas/kattas2/.git/
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ touch file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ ls
+file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ ls -lart
+total 4
+drwxr-xr-x 1 Manan Bhateja 197121 0 Feb  8 11:37 ../
+drwxr-xr-x 1 Manan Bhateja 197121 0 Feb  8 11:39 .git/
+drwxr-xr-x 1 Manan Bhateja 197121 0 Feb  8 11:40 ./
+-rw-r--r-- 1 Manan Bhateja 197121 0 Feb  8 11:40 file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ ls
+file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ vi file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ vi file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git diff
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git diff --staged
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git add file.txt
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git diff
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git diff --staged
+diff --git a/file.txt b/file.txt
+new file mode 100644
+index 0000000..4ff236f
+--- /dev/null
++++ b/file.txt
+@@ -0,0 +1,2 @@
++file is now overwritten
++
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ vi file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git diff
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+diff --git a/file.txt b/file.txt
+index 4ff236f..2741092 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1,2 +1,2 @@
+-file is now overwritten
++file is again overwritten :(
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git diff
+warning: LF will be replaced by CRLF in file.txt.
+The file will have its original line endings in your working directory
+diff --git a/file.txt b/file.txt
+index 4ff236f..2741092 100644
+--- a/file.txt
++++ b/file.txt
+@@ -1,2 +1,2 @@
+-file is now overwritten
++file is again overwritten :(
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git diff --staged
+diff --git a/file.txt b/file.txt
+new file mode 100644
+index 0000000..4ff236f
+--- /dev/null
++++ b/file.txt
+@@ -0,0 +1,2 @@
++file is now overwritten
++
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git diff head
+warning: ignoring dangling symref head
+warning: ignoring dangling symref head
+fatal: ambiguous argument 'head': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git diff --head
+error: invalid option: --head
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git restore --staged file.txt
+fatal: could not resolve HEAD
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git restore file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file.txt
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ vi file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   file.txt
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git commit -m "overwritten"
+[master (root-commit) eaef8fb] overwritten
+ 1 file changed, 2 insertions(+)
+ create mode 100644 file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git log
+commit eaef8fb572e3634d39aa5b8d205e449186fc8e63 (HEAD -> master)
+Author: Manan Bhateja <manan.bhateja@zemosolabs.com>
+Date:   Wed Feb 8 12:19:30 2023 +0530
+
+    overwritten
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ vi file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ cat-file eaef8fb572e3634d39aa5b8d205e449186fc8e63 -p
+bash: cat-file: command not found
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git  cat-file eaef8fb572e3634d39aa5b8d205e449186fc8e63 -p
+tree 9725cf2475637946063a82c2df8a204221ff5c45
+author Manan Bhateja <manan.bhateja@zemosolabs.com> 1675838970 +0530
+committer Manan Bhateja <manan.bhateja@zemosolabs.com> 1675838970 +0530
+
+overwritten
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git  cat-file 9725cf2475637946063a82c2df8a204221ff5c45 -p
+100644 blob 4ff236f6d7603a3623e7a100cb1d3bdc8e3db5d8    file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git  cat-file 4ff236f6d7603a3623e7a100cb1d3bdc8e3db5d8 -p
+file is now overwritten
+
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git restore file.txt
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git remote
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git remote add origin git@github.com:manan23bhateja/kattas2.git
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git remote
+origin
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git remote -v
+origin  git@github.com:manan23bhateja/kattas2.git (fetch)
+origin  git@github.com:manan23bhateja/kattas2.git (push)
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git push origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 246 bytes | 246.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:manan23bhateja/kattas2.git
+ * [new branch]      master -> master
+
+Manan Bhateja@LAPTOP-LI3D2LTR MINGW64 ~/Desktop/kattas/kattas2 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+
